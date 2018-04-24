@@ -1,0 +1,3 @@
+@each $k, $v in $text-sizes {
+	@include helpers("text-#{$k}", "font-size: #{$v}");
+}

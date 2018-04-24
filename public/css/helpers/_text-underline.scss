@@ -1,0 +1,9 @@
+.text-underline {
+	text-decoration: underline;
+}
+
+.text-underline-hover {
+	&:hover {
+		text-decoration: underline;
+	}
+}

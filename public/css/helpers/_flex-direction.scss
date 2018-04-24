@@ -1,0 +1,5 @@
+$flex-direction: ("column", "row");
+
+@each $v in $flex-direction {
+	@include helpers("flex-#{$v}", "flex-direction: #{$v}");
+}

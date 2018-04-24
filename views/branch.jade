@@ -1,0 +1,61 @@
+extends _layout
+
+block body
+
+	.masthead(style="background-image: url('/public/img/property.jpg')")
+
+		.masthead-contents.display-table-cell.vertical-align-middle
+			.masthead-title Gateshead
+
+	.tabs
+		.tabs-navigation
+			.site-container
+				a.is-active About
+				a Team
+				a Properties
+
+				.button.button-brand.float-right Request valuation
+
+
+	.page-section
+		.site-container
+			.columns
+				.columns-6
+					p Sarah Mains are estate agents in the Newcastle area dealing in residential property for sale and to let. Open 9am to 5.30pm Mondaty to Friday, 9am to 4pm on saturdays and 10am to 2pm on Sundays. 
+
+					p Our Customer Care team can be contacted by telephone between 9am and 8pm, Monday to Friday. 
+
+
+			.panel
+				.columns
+					.columns-6
+						.padding-8
+							h2.text-brand.weight-bold Address
+							p 4 Beaconsfield Road
+							p Low Fell
+							p Gateshead
+							p NE9 5EU
+
+
+	.page-section.background-white
+		.site-container
+			h2.h2.margin-bottom-6 Latest properties
+
+			.columns
+				- for (var i = 1; i <= 6; i++ )
+					.columns-4
+						.property-thumb
+							.property-thumb-image(style="background-image: url('/public/img/properties/#{i}.jpg')")
+								.property-status New
+
+							.clearfix
+								.float-left
+									.text-3.margin-bottom-1 Lintzford
+									.text-2.text-light 5 bed, semi-detached
+								.float-right
+									.text-4.text-brand.weight-bold £795,000
+
+
+
+
+

@@ -1,0 +1,89 @@
+extends _layout
+
+block body
+	.property-masthead 
+
+		.site-container.clearfix
+
+			.margin-bottom-5
+				ul.breadcrumb
+					li.is-active
+						a Branches
+					li 
+						a Gateshead
+			.property-masthead-carousel(style="background-image: url('/public/img/property.jpg')")
+				ul.carousel-pager
+					li.is-active
+					li
+					li
+					li
+
+			.property-masthead-details
+
+				.margin-bottom-4
+					.label.margin-right-2 For sale
+					.text-brand.text-1.display-inline-block.weight-bold.vertical-align-middle OFFERS IN THE REGION OF £162,500
+				h1.property-masthead-title.margin-bottom-3 Ellen Wilkinson House, Usk Street, Newscastle
+				ul.bullet-dividers.margin-bottom-4
+					li 2 bedrooms
+					li 3 bathrooms
+
+				p.margin-bottom-6 Incredible far reaching country views are totally stunning from this extremely well maintained and beautifully presented detached house with 3 garages/workshop. Inside the accommodation is bright and very homely with 2 sitting rooms and a kitchen diner.
+
+				.button.button-brand.margin-right-2.button-block-below-md Book viewing
+
+				.button.js-login-modal-open
+					+icon({"name": "heart", "size": 20})
+
+
+	.tabs
+		.tabs-navigation
+			.site-container
+				a.is-active About
+				a Photos
+				a Area
+				a Floorplan
+
+
+	.page-section
+		.property-description
+			.site-container.clearfix
+
+				.property-description-sidebar
+
+					.property-description-map.margin-bottom-3(style="background-image: url('./public/img/map.png')")
+
+					.button.button-left.button-lowercase.button-block.margin-bottom-3 Stamp duty calculator
+					.button.button-left.button-lowercase.button-block.margin-bottom-3 Mortgage calculator
+					.button.button-left.button-lowercase.button-block EPC
+
+				.property-description-content.long-form
+
+					p Pentregalar is a small rural hamlet/village found just outside the larger village of Crymych in the beautiful and rural region of North Pembrokeshire. 
+
+					p Crymych has a good selection of amenities which includes some pubs and shops, The area is perhaps best known for being within easy reach of the Preseli Hills, an area of outstanding natural beauty in the Pembrokeshire National Park, which this property is within. The West Wales coast is roughly a 20/25 minute car journey away and is where numerous beaches are found to be enjoyed.
+
+					p Sitting Room 12'9 x 10'4 (3.89m x 3.15m)
+					p Double glazed window to front enjoying stunning far reach rural views, tiled floor, fire recess, double panel radiator, door to:
+
+					p Kitchen/Diner 17'6 x 7' (5.33m x 2.13m)
+					p Fitted with wall and base storage units with work surfaces over, single drainer sink unit, plumbing for washing machine, space for cooker, part tiled walls, wooden flooring, double glazed window to rear. Dining area has a double glazed window to side, double glazed external door to rear, double panel radiator.
+
+					p First Floor Landing 
+					p Split landing. Main landing with double glazed window to front enjoying the superb views, double panel radiator, access to loft. Inner 
+
+
+
+	.page-section.background-white
+		.site-container
+			h2.h2.margin-bottom-6 You may also like
+
+			.columns
+				- for (var i = 1; i <= 6; i++ )
+					.columns-4
+						+property(i)
+
+
+
+
+

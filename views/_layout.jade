@@ -1,0 +1,166 @@
+include _blocks
+include _head
+
+block navigation
+
+	script.
+		$(document).ready(function() {
+			$(".js-login-modal-open").on("click", function() {
+				$(".backdrop").addClass("is-open");
+				$(".login-panel").addClass("is-open");
+			});
+
+			function closePanel() {
+				$(".sliding-panel").removeClass("is-open");
+				$(".backdrop").removeClass("is-open");
+				$("body").removeClass("overflow-hidden");
+			}
+
+			$(".js-dropdown-toggle").on("click", function(e) {
+				e.stopPropagation();
+				$(this).find(".navigation-dropdown").toggleClass("is-open");
+			});
+
+			$("body").on("click", function() {
+				$(".navigation-dropdown").removeClass("is-open");
+			});
+
+			$(".js-sliding-panel-close").on("click", function() {
+				closePanel();
+			});
+
+			$(".navigation-parent").on("click", function() {
+				$(this).next(".navigation-children").slideToggle();
+			});
+
+			$(".js-mobile-navigation-toggle").on("click", function() {
+				$(".navigation-mobile").toggleClass("is-open");
+				$(this).toggleClass("close");
+				$("body").toggleClass("overflow-hidden");
+			});
+
+			$(".radio").on("click", function() {
+				$(this).addClass("is-checked");
+				$(this).siblings().removeClass("is-checked");
+			});
+		});
+
+	.backdrop
+
+
+	include _login-modal
+
+
+	.navigation-mobile
+		.navigation-parent About
+		ul.navigation-children
+			li Our focus on it
+			li Job vacancies
+			li Latest news
+			li Testimonials
+		.navigation-parent Selling
+		ul.navigation-children
+			li Our focus on it
+			li Job vacancies
+			li Latest news
+			li Testimonials
+		.navigation-parent Buying
+		ul.navigation-children
+			li Our focus on it
+			li Job vacancies
+			li Latest news
+			li Testimonials
+		.navigation-parent Mortgages
+		ul.navigation-children
+			li Our focus on it
+			li Job vacancies
+			li Latest news
+			li Testimonials
+		.navigation-parent Conveyancing
+
+	.navigation-desktop
+
+		.hamburger.js-mobile-navigation-toggle
+			span
+			span
+			span
+			span
+
+		.navigation-inner.float-left
+			.navigation-section
+				a.navigation-logo(href="/")
+					img(src="/public/img/logo.png")
+
+
+		.navigation-inner.float-left.show-above-md
+			.navigation-section.float-left
+				ul.navigation-links
+					li.js-dropdown-toggle
+						a About
+
+						ul.navigation-dropdown
+							li 
+								a Focus
+							li 
+								a Team
+							li 
+								a Testimonials
+							li 
+								a News
+					li 
+						a Selling
+					li 
+						a Renting
+					li 
+						a New homes
+					li 
+						a Commercial
+
+		.navigation-inner.float-right.show-above-md
+			.navigation-section.text-right
+				ul.navigation-links
+					li.js-login-modal-open
+						a(href="#") Login
+
+body(class="#{bodyClass}")
+	include _icons.html
+	block body
+
+block footer
+	.footer
+		.site-container
+
+			.columns
+				.columns-2.no-margin
+					.footer-links
+
+						.footer-links-header About us
+
+						ul
+							li 
+								a About
+							li
+								a Our focus
+							li
+								a Job vacancies
+							li
+								a Latest news
+							li
+								a Testimonials
+
+				.columns-2.no-margin
+					.footer-links
+
+						.footer-links-header Head office
+
+						ul
+							li
+								p.
+									18 Lammas street </br>
+									Carmarthen </br>
+									SA31 3AJ </br>
+									01267 221 554
+
+
+			.footer-copyright
+				p © 2018. Sarah Mains All rights reserved. Powered by Homeflow.

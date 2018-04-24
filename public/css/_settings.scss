@@ -1,0 +1,58 @@
+$breakpoints: (
+	"md": 720px,
+);
+
+$colors: (
+	"brand": #047ec3,
+	"greyscale": (
+		50:  #f9f9f9,
+		100: #f6f7f8,
+		200: #EEEEEE,
+		300: #E0E0E0,
+		400: #BDBDBD,
+		500: #9E9E9E,
+		600: #757575,
+		700: #616161,
+		800: #424242,
+		900: #212121
+	),
+
+	"keylines": (
+		"light": #ececec,
+		"dark": #d2d2d2
+	),
+
+	"social": (
+		"facebook": #4267b2
+	),
+
+	"keyline": #ececec,
+
+	
+);
+
+$grid: (
+	"columns": 12,
+	"gutter": 30px,
+	"breakpoint": 980px
+);
+
+$text-sizes: (
+	1: 12px,
+	2: 14px,
+	3: 16px,
+	4: 18px,
+	5: 20px,
+	6: 25px,
+	7: 30px
+);
+
+$border-radius: 10px;
+
+$max-width-scale: 14;
+
+$shadows: ();
+
+$spacing-scale: 20;
+
+$spacing-base: 5px;

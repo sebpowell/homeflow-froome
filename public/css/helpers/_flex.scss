@@ -1,0 +1,12 @@
+$flex-wrap-modifiers: ("wrap", "nowrap", "wrap-reverse");
+
+@each $v in $flex-wrap-modifiers {
+	@include helpers("flex-#{$v}", "flex-wrap: #{$v}");
+}
+
+$i: 1;
+
+@while $i <= 12 {
+	@include helpers("flex-#{$i}", "flex: #{$i}");
+	$i: $i + 1;
+}

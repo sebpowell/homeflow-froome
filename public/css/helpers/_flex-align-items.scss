@@ -1,0 +1,6 @@
+$flex-align-modifiers: ("center");
+
+@each $v in $flex-align-modifiers {
+	@include helpers("flex-align-#{$v}", "align-items: #{$v}");
+	@include helpers("flex-justify-#{$v}", "justify-content: #{$v}");
+}

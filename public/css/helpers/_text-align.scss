@@ -1,0 +1,5 @@
+$text-align-modifiers: ("left", "center", "right");
+
+@each $v in $text-align-modifiers {
+	@include helpers("text-#{$v}", "text-align: #{$v}");
+}

@@ -1,0 +1,45 @@
+$spacing-sides: ("vertical", "horizontal", "top", "right", "bottom", "left");
+
+$i: 1;
+
+@while $i <= $spacing-scale {
+	
+	$n: $i * strip-unit($spacing-base);	
+	
+	@each $side in $spacing-sides {
+		@if $side == "vertical" {
+			@include helpers("margin-#{$side}-#{$i}", "margin-top: #{$n}px", "margin-bottom: #{$n}px");
+			@include helpers("padding-#{$side}-#{$i}", "padding-top: #{$n}px", "padding-bottom: #{$n}px");
+		}
+
+		@else if $side == "horizontal" {
+			@include helpers("margin-#{$side}-#{$i}", "margin-left: #{$n}px", "margin-right: #{$n}px");
+			@include helpers("padding-#{$side}-#{$i}", "padding-left: #{$n}px", "padding-right: #{$n}px");
+		}
+
+		@else {
+			@include helpers("margin-#{$side}-#{$i}", "margin-#{$side}: #{$n}px");
+			@include helpers("padding-#{$side}-#{$i}", "padding-#{$side}: #{$n}px");
+		}
+
+		@include helpers("margin-#{$i}", "margin: #{$n}px");
+		@include helpers("padding-#{$i}", "padding: #{$n}px");
+	}
+	
+	$i: $i + 1;
+}
+
+@each $side in $spacing-sides {
+	@include helpers("no-margin-#{$side}", "margin-#{$side}: 0 !important");
+	@include helpers("no-padding-#{$side}", "padding-#{$side}: 0 !important");
+}
+
+@include helpers("no-margin", "margin: 0 !important");
+
+@include helpers("no-padding", "padding: 0 !important");
+
+@include helpers("margin-auto", "margin: 0 auto");
+
+.no-margin {
+  margin: 0 !important;
+}

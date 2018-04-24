@@ -1,0 +1,151 @@
+body {
+	padding-top: 60px;
+	@include if-above("md") {
+		padding-top: 70px;
+	}
+}
+
+.navigation-mobile {
+	position: fixed;
+	top: 60px;
+	background-color: black;
+	height: 100vh;
+	width: 100%;
+	overflow-y: scroll;
+	transform: translateX(100%);
+	transition: transform 600ms cubic-bezier(0.86, 0, 0.07, 1);
+	z-index: 5;
+
+	@include if-above("md") {
+		display: none;
+	}
+
+	&.is-open {
+		transform: translateX(0px);
+	}
+
+	.navigation-parent {
+		color: white;
+		cursor: pointer;
+		font-size: 22px;
+		font-weight: 700;
+		padding: sizes(4) sizes(6);
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+
+		&:first-child {
+			border-top: 1px solid rgba(255,255,255,0.1);
+		}
+
+	}
+
+	.navigation-children {
+		display: none;
+		background-color: rgba(255,255,255,0.08);
+
+		li {
+			color: white;
+			padding: sizes(4) sizes(6);
+			font-size: 22px;
+		}
+	}
+}
+
+.navigation-desktop {
+	background: black;
+	height: 60px;
+	top: 0;
+	padding: 0 sizes(5);
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+	z-index: 3;
+
+	@include if-above("md") {
+		height: 70px;
+	}
+
+	.navigation-section {
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.navigation-inner {
+		display: table;
+		// width: 100%;
+		height: 100%;
+	}
+
+	.navigation-logo {
+		display: block;
+		width: 160px;
+		margin-right: sizes(4);
+	}
+
+	.navigation-dropdown {
+		@include no-bullet();
+		// padding: sizes(4);
+		background: white;
+		min-width: 200px;
+		box-shadow: 0 0 10px rgba(00,00,00,0.2);
+		position: absolute;
+		top: 100%;
+		left: 0;
+		color: black;
+		z-index: 3;
+		transform: translateY(20px);
+		transition: all .35s;
+		opacity: 0;
+		visibility: hidden;
+
+		> li {
+			padding: sizes(4);
+		}
+
+		&.is-open {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+	}
+
+	.navigation-links {
+
+		@include no-bullet();
+
+		color: white;
+		font-weight: 400;
+		display: table;
+		height: 100%;
+
+		> li {
+			position: relative;
+			display: table-cell;
+			height: 100%;
+			padding: 0 sizes(3);
+			vertical-align: middle;
+
+			a {
+				display: block;
+			}
+
+			&:after {
+				transition: all .25s;
+				content: "";
+				position: absolute;
+				background-color: colors("brand");
+				width: 100%;
+				left: 0;
+				height: 3px;
+				bottom: 0;
+				opacity: 0;
+			}
+
+			&:hover {
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

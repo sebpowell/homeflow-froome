@@ -1,0 +1,16 @@
+@function colors($args...) {
+	@if length($args) > 1 {
+		$category: nth($args, 1);
+		$name: nth($args, 2);
+		@return map-deep-get($colors, $category, $name);
+	}
+	@else {
+		$name: nth($args, 1);
+		@return map-get($colors, $name);
+	}
+}
+
+
+@function sizes($size) {
+	@return $size * $spacing-base;
+}

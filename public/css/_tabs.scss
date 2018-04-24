@@ -1,0 +1,38 @@
+.tabs {
+	.tabs-navigation {
+		@include clearfix();
+		background-color: white;
+		border-bottom: 1px solid colors("keyline");
+		border-top: 1px solid colors("keyline");
+		width: 100%;
+		
+		a {	
+			float: left;
+			padding: sizes(4) 0;
+			margin-right: sizes(8);
+
+			&.is-active {
+				color: colors("brand");
+				position: relative;
+
+				&:after {
+					content: "";
+					width: 100%;
+					height: 3px;
+					left: 0;
+					background: colors("brand");
+					position: absolute;
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	.tabs-content {
+		display: none;
+
+		&.is-open {
+			display: block;
+		}
+	}
+}

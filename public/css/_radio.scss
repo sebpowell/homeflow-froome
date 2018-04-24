@@ -1,0 +1,39 @@
+.radio {
+	.radio-label {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		font-size: 18px;
+		top: 2px;
+	}
+
+	.radio-input {
+		@include circle(22px);
+		cursor: pointer;
+		border: 1px solid colors("brand");
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: sizes(1);
+		position: relative;
+		&:after {
+			@include circle(12px);
+			content: "";
+			transition: all .25s;
+			position: absolute;
+			opacity: 0;
+			transform: scale(0.8);
+			top: 4px;
+			left: 4px;
+			background-color: colors("brand");
+		}
+	}
+
+	&.is-checked {
+		.radio-input {
+			&:after {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}

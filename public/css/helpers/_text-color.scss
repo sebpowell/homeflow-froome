@@ -1,0 +1,28 @@
+@each $category, $value in $colors {
+
+	$type: type-of($value);
+
+	@if $type == "map" {
+		@each $color, $value in map-deep-get($colors, $category) {
+			@if type-of($value) == "map" {
+				@each $c, $v in map-deep-get($colors, $category, $color) {
+					.text-#{$category}-#{$color}-#{$c} {
+						color: $v;
+					}
+				}
+			}
+
+			@else {
+				.text-#{$category}-#{$color} {
+					color: $value;
+				}
+			}
+		}
+	}
+
+	@else {
+		.text-#{$category} {
+			color: $value;
+		}
+	}
+}

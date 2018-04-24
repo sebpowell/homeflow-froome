@@ -1,0 +1,113 @@
+extends _layout
+
+block body
+
+	.masthead(style="background-image: url('/public/img/masthead.jpg')")
+
+		.masthead-contents.display-table-cell.vertical-align-middle
+			.masthead-title Free instant online valuation
+			.masthead-sub Find out what your home is worth in less than 60 seconds.
+			.margin-top-5.button.button-brand.button-large(data-modal="valuation") Get your online valuation
+
+
+	.modal-container(id="valuation")
+		.modal.modal-full-screen
+			.columns.no-gutter
+				.columns-6.no-margin
+					.padding-12
+						h1.margin-bottom-4.text-brand Get an instant online valuation
+
+						form
+							.form-group
+								input(type="email" placeholder="Postcode")
+							.form-group
+								select
+									option Number of bedrooms
+									option 1 bedroom
+									option 2 bedrooms
+									option 3 bedrooms
+									option 4 bedrooms
+									option 5 bedrooms
+							.form-group
+								input(type="email" placeholder="Full name")
+							.form-group
+								input(type="email" placeholder="Email address")
+							.form-group
+								input(type="email" placeholder="Phone number")
+
+							.button.button-large.button-block.button-brand.margin-bottom-5 Next
+
+						p.text-1.text-greyscale-700 By clicking ‘next’ you agree to us using your data to provide you with an instant online valuation. Your data will be safely stored and won’t be shared with any third-parties, in accordance with our Privacy Policy.
+
+
+
+				.columns-6.no-margin
+					.valuation-tool-background(style="background-image: url('/public/img/masthead.jpg')")
+						.modal-close.js-modal-close
+							+icon({"name": "close"})
+
+	.property-search
+		.site-container
+			.display-flex.margin-bottom-4
+				.radio.is-checked.margin-right-3
+					.radio-input
+					.radio-label To buy
+				.radio
+					.radio-input
+					.radio-label To let
+			.display-flex-above-md
+				.property-search-input
+					input(type="text" placeholder="Area or postcode")
+				.property-search-input
+					select
+						option Min price
+				.property-search-input
+					select
+						option Max price
+				.property-search-input
+					select
+						option Min beds
+				.property-search-input
+					select
+						option Max beds
+				.property-search-input
+					.button.button-brand.button-large Search
+
+	.page-section.background-greyscale-100
+		.site-container
+			h2.h2.margin-bottom-6.text-center Latest properties
+
+			.margin-bottom-8
+				.columns
+					- for (var i = 1; i <= 6; i++ )
+						.columns-4
+							+property(i)
+
+			.text-center
+				a.button.button-brand.button-empty(href="#") See more properties
+	
+	.page-section.testimonials
+
+		h2.h2.margin-bottom-6.text-center.text-white Testimonials
+		.site-container
+			.testimonials-slider
+				p Good morning Iolo and team, just to let you know that we put an offer in on a house at Capel Dewi on Friday afternoon which has been accepted. Hopefully everything will go through without any hiccups! I would like to thank you all for your time and assistance, you were the best Estate Agents that we have dealt with in terms of being available for viewings, pleasant, always helpful and proactive in finding properties for us. 
+
+			ul.carousel-pager
+				li.is-active
+				li
+				li
+				li
+
+	.page-section.background-greyscale-100
+		.site-container
+			h2.h2.margin-bottom-6.text-center Latest from the blog
+
+			.columns
+				each post, i in posts
+					.columns-4
+						a.property-thumb(href="index.html")
+							.property-thumb-image(style="background-image: url('/public/img/posts/#{i}.jpg')")
+							h2.margin-bottom-3= post
+							a.text-brand(href="#") Read more
+

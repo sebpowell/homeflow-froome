@@ -1,0 +1,24 @@
+mixin icon(opts)
+	svg(style="width: #{opts.size}; height: #{opts.size}" class="#{opts.class}")
+		use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-#{opts.name}")
+
+
+mixin verified(text)
+	.tooltip
+		.verified
+			+icon({"name": "tick-simple"}) 
+			.verified-label Verified
+
+		.tooltip-content This data has been verified by Airfinity.
+
+mixin property(i)
+	a.property-thumb(href="/property.html")
+		.property-thumb-image(style="background-image: url('/public/img/properties/#{i}.jpg')")
+			.property-status New
+
+		.clearfix
+			.float-left
+				.text-3.margin-bottom-1 Lintzford
+				.text-2.text-light 5 bed, semi-detached
+			.float-right
+				.text-4.text-brand.weight-bold £795,000

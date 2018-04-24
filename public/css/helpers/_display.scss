@@ -1,0 +1,5 @@
+$display-modifiers: ("none", "block", "inline-block", "table", "table-row", "table-cell", "flex");
+
+@each $v in $display-modifiers {
+	@include helpers("display-#{$v}", "display: #{$v}");
+}
